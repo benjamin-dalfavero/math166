@@ -1,1 +1,3 @@
-"# MATH 166" 
+# MATH 166
+
+My code for my numerical methods class
