@@ -1,6 +1,3 @@
-'''
-'''
-
 def newton(f, df, x0, bound):
 	'''
 	solve for roots of a function by newton's method
@@ -10,16 +7,8 @@ def newton(f, df, x0, bound):
 	bound: error bound
 	'''
 	x = x0 # current guess of root
-	fx = f(x) # assign function value to variable so you don't need to evaluate again.
-	dfx = df(x)
-	x_n = x - fx / dfx # assign new guess
-	fx_n = f(x_n)
-	dfx_n = df(x_n)
+	x_n = x - f(x) / df(x) # assign new guess
 	while abs(x_n - x) > bound:
 		x = x_n # reassign previous guess
-		fx = fx_n
-		dfx = dfx_n
-		x_n = x - fx / dfx # assign new guess
-		fx_n = f(x_n)
-		dfx_n = df(x_n)
+		x_n = x - f(x) / df(x) # assign new guess
 	return x_n
